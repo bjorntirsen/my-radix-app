@@ -22,6 +22,6 @@ test("Home page", () => {
   expect(footer.getByRole("link", { name: /learn/i })).toBeDefined();
   expect(footer.getByRole("link", { name: /examples/i })).toBeDefined();
   expect(
-    footer.getByRole("link", { name: /go to nextjs\.org/i })
+    footer.getByRole("link", { name: /go to nextjs\.org/i }),
   ).toBeDefined();
 });
