@@ -34,5 +34,14 @@
     "tailwindcss": "4.1.13",
     "typescript": "5.9.2",
     "vitest": "3.2.4"
-  }
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
+  },
+  "packageManager": "pnpm@10.15.1"
 }
