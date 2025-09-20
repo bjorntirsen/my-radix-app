@@ -1,21 +1,48 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": ["workarounds:typesNodeVersioning"],
+  "schedule": ["* * * * 1"],
+  "automerge": true,
   "automergeType": "pr",
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "matchCurrentVersion": "!/^0/",
-      "automerge": true
-    }
-  ],
-  "schedule": ["every weekend"],
-  "prHourlyLimit": 4,
   "minimumReleaseAge": "3 days",
+  "prHourlyLimit": 4,
   "labels": ["dependencies"],
-  "rangeStrategy": "pin",
   "lockFileMaintenance": {
     "enabled": true,
+    "automerge": true,
     "schedule": ["before 5am on monday"]
-  }
+  },
+  "packageRules": [
+    {
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "3 days"
+    },
+    {
+      "matchUpdateTypes": ["patch", "pin", "minor"],
+      "matchCurrentVersion": "!/^0/",
+      "groupName": "non-breaking updates"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions updates"
+    },
+    {
+      "matchManagers": ["asdf", "github-actions"],
+      "matchPackageNames": ["node", "actions/setup-node"],
+      "versioning": "node",
+      "allowedVersions": "<23"
+    },
+    {
+      "matchManagers": ["dockerfile"],
+      "matchPackageNames": ["node"],
+      "versioning": "node",
+      "allowedVersions": "<23"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["@types/node"],
+      "versioning": "node",
+      "allowedVersions": "<23"
+    }
+  ]
 }
