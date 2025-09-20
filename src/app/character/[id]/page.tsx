@@ -1,11 +1,14 @@
 import { Flex, Text, Card, Inset, Container, Button } from "@radix-ui/themes";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const res = await fetch("https://api.jikan.moe/v4/characters?page=1&limit=6");
   const data = await res.json();
-  return data.data.map((char: any) => ({ id: String(char.mal_id) }));
+  return data.data.map((char: { mal_id: number }) => ({
+    id: String(char.mal_id),
+  }));
 }
 
 async function getCharacter(id: string) {
@@ -40,17 +43,17 @@ export default async function CharacterPage({
             pb="current"
             style={{ minWidth: 240 }}
           >
-            <img
+            <Image
               src={
                 character.images.webp?.image_url ||
                 character.images.jpg.image_url
               }
               alt={character.name}
+              fill
+              sizes="(max-width: 768px) 100vw, 384px"
               style={{
-                width: "240px",
-                height: "240px",
                 objectFit: "cover",
-                borderRadius: "12px",
+                objectPosition: "top",
               }}
             />
           </Inset>

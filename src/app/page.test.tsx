@@ -20,7 +20,7 @@ global.fetch = async () =>
         },
       ],
     }),
-  }) as any;
+  }) as unknown as Response;
 
 // Helper wrapper to resolve the async component
 async function renderHome() {
