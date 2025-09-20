@@ -23,10 +23,9 @@ type Character = {
 };
 
 async function getCharacters(): Promise<Character[]> {
-  const res = await fetch(
-    "https://api.jikan.moe/v4/characters?page=1&limit=6",
-    { cache: "no-store" },
-  );
+  const res = await fetch("https://api.jikan.moe/v4/characters", {
+    cache: "no-store",
+  });
   if (!res.ok) {
     throw new Error("Failed to fetch characters");
   }
@@ -73,16 +72,16 @@ export default async function Home() {
       <Header />
 
       <main className="container mx-auto grow px-4 py-8">
-        <Flex wrap="wrap" gap="5" justify="center">
+        <Flex wrap="wrap" gap="5" justify="center" align="stretch">
           {characters.map((char, i) => (
             <Theme accentColor={getAccentColor(i)} key={char.mal_id}>
               <Card
                 size="3"
                 style={{
-                  width: 320,
+                  width: 240,
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
-                  justifyContent: "space-between",
                 }}
               >
                 <Inset clip="padding-box" side="top" pb="current">
@@ -91,13 +90,15 @@ export default async function Home() {
                       char.images.webp?.image_url || char.images.jpg.image_url
                     }
                     alt={char.name}
-                    width={320}
+                    width={240}
                     height={256}
                     priority={i === 0}
                     style={{
                       objectFit: "cover",
                       objectPosition: "top",
                       borderRadius: "12px 12px 0 0",
+                      width: "240px",
+                      height: "256px",
                     }}
                   />
                 </Inset>

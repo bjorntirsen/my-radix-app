@@ -40,7 +40,7 @@ export default async function CharacterPage({ params }: CharacterPageProps) {
         <Flex direction="row" gap="5" align="start" wrap="wrap">
           <Inset
             clip="padding-box"
-            side="top"
+            side="left"
             pb="current"
             style={{ minWidth: 240 }}
           >
@@ -50,11 +50,14 @@ export default async function CharacterPage({ params }: CharacterPageProps) {
                 character.images.jpg.image_url
               }
               alt={character.name}
-              fill
+              width={240}
+              height={240}
               sizes="(max-width: 768px) 100vw, 384px"
               style={{
                 objectFit: "cover",
                 objectPosition: "top",
+                width: "240px",
+                height: "auto",
               }}
             />
           </Inset>
