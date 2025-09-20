@@ -1,16 +1,16 @@
-# my-radix-app
+# bjorntirsen_my-radix-app
 
 Just an app to try out radix
 
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=my-radix-app&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=my-radix-app)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=my-radix-app&metric=bugs)](https://sonarcloud.io/summary/new_code?id=my-radix-app)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=my-radix-app&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=my-radix-app)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=my-radix-app&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=my-radix-app)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=my-radix-app&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=my-radix-app)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=my-radix-app&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=my-radix-app)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=my-radix-app&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=my-radix-app)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=my-radix-app&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=my-radix-app)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=my-radix-app&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=my-radix-app)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=bjorntirsen_my-radix-app&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=bjorntirsen_my-radix-app)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=bjorntirsen_my-radix-app&metric=bugs)](https://sonarcloud.io/summary/new_code?id=bjorntirsen_my-radix-app)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=bjorntirsen_my-radix-app&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=bjorntirsen_my-radix-app)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=bjorntirsen_my-radix-app&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=bjorntirsen_my-radix-app)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=bjorntirsen_my-radix-app&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=bjorntirsen_my-radix-app)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=bjorntirsen_my-radix-app&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=bjorntirsen_my-radix-app)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=bjorntirsen_my-radix-app&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=bjorntirsen_my-radix-app)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=bjorntirsen_my-radix-app&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=bjorntirsen_my-radix-app)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=bjorntirsen_my-radix-app&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=bjorntirsen_my-radix-app)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
