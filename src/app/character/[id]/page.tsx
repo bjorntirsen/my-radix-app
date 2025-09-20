@@ -3,6 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+type CharacterPageProps = {
+  params: Promise<{ id: string }>;
+};
+
 export async function generateStaticParams() {
   const res = await fetch("https://api.jikan.moe/v4/characters?page=1&limit=6");
   const data = await res.json();
@@ -18,12 +22,9 @@ async function getCharacter(id: string) {
   return data.data;
 }
 
-export default async function CharacterPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const character = await getCharacter(params.id);
+export default async function CharacterPage({ params }: CharacterPageProps) {
+  const { id } = await params;
+  const character = await getCharacter(id);
   if (!character) return notFound();
 
   return (
