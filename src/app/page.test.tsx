@@ -1,27 +1,37 @@
+import { render, screen } from "@testing-library/react";
 import { expect, test } from "vitest";
-import { render, screen, within } from "@testing-library/react";
+import { TooltipProvider } from "@radix-ui/react-tooltip";
 import Home from "./page";
 
-test("Home page", () => {
-  render(<Home />);
-  const main = within(screen.getByRole("main"));
+// Mock fetch
+global.fetch = async () =>
+  ({
+    ok: true,
+    json: async () => ({
+      data: [
+        {
+          mal_id: 1,
+          name: "Naruto Uzumaki",
+          images: {
+            jpg: { image_url: "/naruto.jpg" },
+            webp: { image_url: "" },
+          },
+          about: "A ninja from Konoha.",
+        },
+      ],
+    }),
+  }) as any;
 
-  // Check for Next.js logo
-  expect(main.getByRole("img", { name: /next\.js logo/i })).toBeDefined();
+// Helper wrapper to resolve the async component
+async function renderHome() {
+  const HomeResolved = await Home();
+  return render(<TooltipProvider>{HomeResolved}</TooltipProvider>);
+}
 
-  // Check for the editing instruction text
-  expect(main.getByText(/get started by editing/i)).toBeDefined();
-  expect(main.getByText("src/app/page.tsx")).toBeDefined();
+test("Home page renders character cards", async () => {
+  await renderHome();
 
-  // Check for main action buttons
-  expect(main.getByRole("link", { name: /deploy now/i })).toBeDefined();
-  expect(main.getByRole("link", { name: /read our docs/i })).toBeDefined();
-
-  // Check footer links
-  const footer = within(screen.getByRole("contentinfo"));
-  expect(footer.getByRole("link", { name: /learn/i })).toBeDefined();
-  expect(footer.getByRole("link", { name: /examples/i })).toBeDefined();
   expect(
-    footer.getByRole("link", { name: /go to nextjs\.org/i }),
-  ).toBeDefined();
+    await screen.findByRole("heading", { name: "Naruto Uzumaki" }),
+  ).toBeInTheDocument();
 });
